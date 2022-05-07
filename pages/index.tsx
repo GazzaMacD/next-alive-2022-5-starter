@@ -1,8 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "@/styles/page-styles/Home.module.scss";
+import _ from "lodash";
 
 const Home: NextPage = () => {
+  const complexObj = { nest: { complex: null } };
+  const cpyComplexObj = _.cloneDeep(complexObj);
+  console.log(cpyComplexObj);
   return (
     <div>
       <Head>
