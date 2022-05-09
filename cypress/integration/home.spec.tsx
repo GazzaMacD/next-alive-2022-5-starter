@@ -1,5 +1,3 @@
-import cypress from "cypress";
-
 // <reference types="cypress"/>
 context(`Home page user tests`, () => {
   // setup
