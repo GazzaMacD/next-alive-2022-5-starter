@@ -9,7 +9,7 @@
     "lint": "next lint",
     "test": "yarn jest",
     "cy:open": "cypress open",
-    "e2e": "start-server-and-test dev 3000 cy:open"
+    "dev-e2e": "start-server-and-test dev 3000 cy:open"
   },
   "dependencies": {
     "@types/lodash": "^4.14.182",
