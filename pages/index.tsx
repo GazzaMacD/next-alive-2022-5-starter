@@ -1,24 +1,39 @@
+import * as React from "react";
 import type { NextPage } from "next";
-import Head from "next/head";
-import styles from "@/styles/page-styles/Home.module.scss";
 import _ from "lodash";
+import Head from "next/head";
+
+import { BaseLayout } from "@/components/layouts/BaseLayout/BaseLayout";
+import { FrontLayout } from "@/components/layouts/FrontLayout";
+import { Button } from "@/components/elements/Button";
+import styles from "@/styles/page-styles/Home.module.scss";
 
 const Home: NextPage = () => {
   const complexObj = { nest: { complex: null } };
   const cpyComplexObj = _.cloneDeep(complexObj);
   console.log(cpyComplexObj);
   return (
-    <div>
+    <>
       <Head>
         <title>Next App</title>
         <meta name="description" content="description here" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.Div}>
-        <h1 className={styles.Div__title}>Alive Starter</h1>
+      <div className={styles.Home}>
+        <h1 className={styles.Home__title}>Next.js Project Starter</h1>
+        <br></br>
+        <Button>Test Button</Button>
       </div>
-    </div>
+    </>
+  );
+};
+
+Home.getLayout = function getLayout(page: React.ReactElement) {
+  return (
+    <BaseLayout>
+      <FrontLayout>{page}</FrontLayout>
+    </BaseLayout>
   );
 };
 
