@@ -1,5 +1,4 @@
 import * as React from "react";
-import type { NextPage } from "next";
 import _ from "lodash";
 import Head from "next/head";
 
@@ -7,8 +6,11 @@ import { BaseLayout } from "@/components/layouts/BaseLayout/BaseLayout";
 import { FrontLayout } from "@/components/layouts/FrontLayout";
 import { Button } from "@/components/elements/Button";
 import styles from "@/styles/page-styles/Home.module.scss";
+// types
+import { TNextPageWithLayout } from "@/common/types";
 
-const Home: NextPage = () => {
+const Home: TNextPageWithLayout = (): JSX.Element => {
+  const [showTestText, setShowTestText] = React.useState(false);
   const complexObj = { nest: { complex: null } };
   const cpyComplexObj = _.cloneDeep(complexObj);
   console.log(cpyComplexObj);
@@ -23,7 +25,11 @@ const Home: NextPage = () => {
       <div className={styles.Home}>
         <h1 className={styles.Home__title}>Next.js Project Starter</h1>
         <br></br>
-        <Button>Test Button</Button>
+        <Button clickHandler={() => setShowTestText(!showTestText)}>
+          Test Button
+        </Button>
+        <br></br>
+        {showTestText && <p>Test text</p>}
       </div>
     </>
   );

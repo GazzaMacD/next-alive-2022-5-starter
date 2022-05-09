@@ -1,12 +1,10 @@
-import type { ReactElement, ReactNode } from "react";
-import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 
 import "@/styles/globals.scss";
 
-type TNextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
+// types
+import { TNextPageWithLayout } from "@/common/types";
+
 type TAppPropsWithLayout = AppProps & {
   Component: TNextPageWithLayout;
 };
