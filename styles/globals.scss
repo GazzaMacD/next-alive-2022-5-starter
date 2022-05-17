@@ -1,4 +1,7 @@
-@import "./main";
+@import "./sass/utility/reset";
+@import "./sass/utility";
+@import "./sass/modules";
+@import "./sass/layout/base";
 
 html,
 body {
